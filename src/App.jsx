@@ -6,6 +6,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import NotFound from './components/NotFound';
 import Products from './components/Products';
+import ProductDetails from './components/ProductDetails';
 
 
 
@@ -15,12 +16,16 @@ const App = () => {
       <Navbar/> 
 
        <Routes>
+         <Route path='*' element={<NotFound/>}  />
           <Route path='/' element={<Home/>} />
           <Route path='/about' element={<About/>} /> 
           <Route path='/contact' element={<Contact/>} /> 
           <Route  path='/products' element={<Products/> } />
-          <Route path='*' element={<NotFound/>}  />
           
+          {/* dynamic routing  */}
+          <Route  path='/products/:id' element={<ProductDetails/> } />
+
+
        </Routes>
    
     </div>
